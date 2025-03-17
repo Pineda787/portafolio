@@ -1,0 +1,111 @@
+@color-primario: #3498db;
+@color-secundario: #2c3e50;
+@blanco: #ffffff;
+@gris-claro: #ecf0f1;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: @gris-claro;
+  color: @color-secundario;
+}
+
+header {
+  background-color: @color-primario;
+  padding: 15px 0;
+  text-align: center;
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start; /* Esto alineará los elementos a la izquierda */
+    gap: 20px;
+
+    li {
+      display: inline;
+
+      a {
+        text-decoration: none;
+        color: @blanco;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: darken(@color-primario, 10%);
+        }
+      }
+    }
+  }
+}
+
+/* --- SECCIÓN DE INICIO --- */
+#inicio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  text-align: center;
+
+  .card {
+    background: @blanco;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p,
+    ul {
+      font-size: 16px;
+    }
+  }
+}
+
+/* --- SECCIÓN DESCRIPCIÓN --- */
+#descripcion {
+  text-align: center;
+  padding: 40px;
+  
+  h2 {
+    color: @color-primario;
+  }
+
+  p {
+    max-width: 600px;
+    margin: auto;
+    font-size: 18px;
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  #inicio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
